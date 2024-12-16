@@ -75,22 +75,13 @@ async function generate(messages) {
   // Tell the main thread we are starting
   self.postMessage({ status: "start" });
 
-  const { past_key_values, sequences } = await model.generate({
+  const { sequences } = await model.generate({
     ...inputs,
-    // TODO: Add back when fixed
-    // past_key_values: past_key_values_cache,
-
-    // Sampling
-    // do_sample: true,
-    // top_k: 3,
-    // temperature: 0.2,
-
     max_new_tokens: 1024,
     streamer,
     stopping_criteria,
     return_dict_in_generate: true,
   });
-  past_key_values_cache = past_key_values;
 
   const decoded = tokenizer.batch_decode(sequences, {
     skip_special_tokens: true,
@@ -118,10 +109,10 @@ async function load() {
 
   self.postMessage({
     status: "loading",
-    data: "Compiling shaders and warming up model...",
+    data: "Warming up model...",
   });
 
-  // Run model with dummy input to compile shaders
+  // Run model with dummy input to warm up
   const inputs = tokenizer("a");
   await model.generate({ ...inputs, max_new_tokens: 1 });
   self.postMessage({ status: "ready" });

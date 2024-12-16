@@ -1,5 +1,5 @@
 ---
-title: SmolLM WebGPU
+title: SmolLM CPU
 emoji: 🤏
 colorFrom: blue
 colorTo: indigo
@@ -7,14 +7,13 @@ sdk: static
 pinned: false
 license: apache-2.0
 models:
-  - HuggingFaceTB/SmolLM-360M-Instruct
-short_description: A powerful AI chatbot that runs locally in your browser
-thumbnail: https://huggingface.co/spaces/webml-community/smollm-webgpu/resolve/main/banner.png
+  - HuggingFaceTB/SmolLM2-135M-Instruct
+short_description: A powerful AI chatbot that runs locally in your browser using CPU
+thumbnail: https://huggingface.co/spaces/webml-community/smollm-cpu/resolve/main/banner.png
 ---
+# SmolLM CPU
 
-# SmolLM WebGPU
-
-A simple React + Vite application for running [SmolLM-360M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM-360M-Instruct), a powerful small language model, locally in the browser using Transformers.js and WebGPU-acceleration.
+A simple React + Vite application for running [SmolLM2-135M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct), a powerful small language model, locally in the browser using Transformers.js on CPU.
 
 ## Getting Started
 
@@ -30,10 +29,10 @@ git clone https://github.com/huggingface/transformers.js-examples.git
 
 ### 2. Navigate to the Project Directory
 
-Change your working directory to the `smollm-webgpu` folder:
+Change your working directory to the `smollm-cpu` folder:
 
 ```sh
-cd transformers.js-examples/smollm-webgpu
+cd transformers.js-examples/smollm-cpu
 ```
 
 ### 3. Install Dependencies

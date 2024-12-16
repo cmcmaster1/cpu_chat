@@ -230,7 +230,7 @@ function App() {
               loaded, it can even be used offline. The source code for the demo
               is available on{" "}
               <a
-                href="https://github.com/huggingface/transformers.js-examples/tree/main/smollm-webgpu"
+                href="https://github.com/huggingface/transformers.js-examples/tree/main/smollm-cpu"
                 target="_blank"
                 rel="noreferrer"
                 className="font-medium underline"
